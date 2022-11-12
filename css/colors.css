@@ -1,0 +1,103 @@
+.color-by-name {
+    background-color: coral;
+    color: azure;
+    border: medium solid green;
+}
+
+/* Sistema hexadecimal
+0-F
+
+RGB (Red-Blue-Green) vs CMYK (Cyan-Magenta-Yellow-Key)
+
+Colores en HEX va a ser colores de 6 dígitos
+#FF6600 */
+
+.color-by-hex {
+    background-color: #ff6600;
+    background-color: #f60;
+    background-color: #00000070; /*los dos ultimos dígitos hacen referencia a la intensidad de la opacidad que van desde el 01% al 99%*/
+    color: #fff;
+    border: thick solid #ffffff;
+    border: thick solid #ff0000;
+    border: thick solid #00ff00;
+    border: thick solid #ffffff;
+    border: thick solid #000000;
+    border: thick solid #f005;  /*las opacidades van en este caso del 1 a 9*/
+}
+
+/* Sistema RGB
+Acepta 8bits por canal
+Bit(0/1) 2 elvado a la potencia 8 = 2^8 = 256
+por cada canal de color tenemos valores q van del 0 al 255
+*/
+
+.color-by-rgb {
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 255, 0);
+    background-color: rgb(0, 0, 255);
+    background-color: rgba(0, 0, 0, .45); /*el tono alpha (opacidad) se da en añadiendo el a(alpha) y el cuarto valor va desde el 0 a 1, */
+    color: rgb(255, 255, 255);
+    border: medium solid rgb(250, 17, 129);
+}
+
+/* Sistema HSL (Hue Saturation Lightness)
+Hue -> Circulo crómatico representa la gama crómatica
+0 -> red
+60 -> yellow
+120 -> green
+180 -> cyan 
+240 -> blue
+300 -> magenta
+
+saturation -> intensidad del color 
+0% (escala de grises ) >> 100% (color puro)
+
+lightness -> luminosidad del color 
+0% (negro) >> 100% (color blanco)
+*/
+
+.color-by-hsl {
+    background-color: hsl(0, 70%, 50%);
+    background-color: hsl(120, 100%, 50%);
+    background-color: hsl(240, 100%, 50%);
+    background-color: hsl(30, 100%, 50%, 0.5); /*el cuarto valor hace referencia a la opacidad que va desde el 0 a 1*/
+    color: hsl(0, 70%, 50%);
+    border: medium solid hsl(120, 100%, 50%);
+    margin-bottom: 20px;
+}
+
+/* Valor transparent -> es igual aplicar a rgba(0,0,0,0)
+Valor current -> Hereda el valor por defecto o asignado de la propiedad color. del ancestro que tenga definida esta propiedad, busca del ancestro mas cercano al más alejado */
+
+.color-transparent-current {
+    background-color: darkmagenta;
+    background-color: transparent;
+    background-color: currentColor;
+    background-color: transparent;
+    color: orange;
+    border: thick solid currentColor;
+}
+
+.opacity {
+    background-color: orchid;
+    color: navy;
+    border: thick solid black;
+    opacity: .5;
+}
+
+.opacity-00 {
+    opacity: 0;
+}
+
+.opacity-10 {
+    opacity: .1;
+}
+
+.opacity-20 {
+    opacity: .2;
+}
+
+.opacity-30 {
+    opacity: .3;
+}

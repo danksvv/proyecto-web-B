@@ -1,0 +1,19 @@
+html {
+    box-sizing: content-box;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    
+}
+
+.shadow {
+    border: medium solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+}

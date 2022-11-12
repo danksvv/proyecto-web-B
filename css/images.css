@@ -1,0 +1,29 @@
+/* reseteo de imagenes  */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card {
+    border: medium solid black;
+    width: 400px;
+    height: 400px;
+}
+
+/* el object-fit y object-position se recomienda utilizar más cuando se realizan tarjetas, para una imagen especificada en dimensiones */
+.card img {
+    background-color: aqua;
+    height: 300px;
+    object-fit: fill; /*default*/
+    object-fit: cover; /*se activa el object position*/
+    object-fit: contain;
+    object-fit: none; /*la escala a tamaño real de la imagen*/
+    object-fit: scale-down; /*toma el valor que sea menor del os valores contain y none*/
+    object-position: left top; /*visualiza desde el margen de la izquierda en adelante*/
+    object-position: 50% 50%;
+    object-position: right bottom;
+    object-position: left bottom;
+    object-position: 50% 50%;
+    object-position: 40px center;
+    object-position: 50% 50%;
+}

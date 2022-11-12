@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-image {
+    background-image: url("https://placeimg.com/1280/720/animals");
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.hero-image div {
+    background-color: rgba(0, 0, 0, .75);
+}

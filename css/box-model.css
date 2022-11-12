@@ -1,0 +1,188 @@
+/* Modelo de caja: es la forma que CSS ve a los elementos de HTML, ¿y como los ve? como si fueran cajas con las siguientes propiedades:
+1. El contenido(content) El contenido (text) del elemento html, tomando en cuenta sus dimensiones(width & height)
+2. El border(border) Lo que delimita cada uno de los elementos html
+3. El relleno (padding) Son las distancias internas(la distancia del bode al contenido)
+4. El márgen(margin) Son las distancias externas(La distancia entre el elemento html y sus elementos hermanos o padres)
+
+Dentro del modelo de caja hay que considerar que una caja tendrá 4 lados:
+1. Arriba (top)
+2. Derecha (right)
+1. Abajo (botton)
+1. Izquierda (left) */
+
+body {
+    margin: 0;
+}
+h1 {
+    width: 400px;
+    height: 200px;
+    /* propiedades de tipo shorthand */
+    border-color: goldenrod;
+    border-top-color: black;
+    border-width: medium; /*thin = 1px, medium=3px, thick=5px*/
+    border-style: solid;
+    border: 2px dashed blue;
+}
+
+/* Esto aplica para margin y padding:
+1 valor = aplica a los 4 lados
+2 valores = 1º valor aplica a los lados verticales, 2º valor aplica a los lados horizontales 
+3 valores = 1º valor aplica al top, 2º valor aplica a los lados verticales y 3º aplica a bottom,
+4 valores = cada punto empezando top y girando en direccion de las manesillas del reloj */
+.caja-uno,
+.caja-dos {
+    background-color: lightpink;
+    border: medium solid gold;
+    padding: 10px;
+    margin: 20px;
+    padding: 20px 40px;
+    margin: 40px 30px 0;
+    padding: 10px 20px 40px 50px;
+}
+
+/* 
+Caja de línea
+    - Ocupan el espacio necesario para mostrar su contenido.
+    - No tienen dimensiones modificables(alto, ancho).
+    - Permiten otros elementos a su lado.
+    - Padding y margin solo empujan a elementos adyacentes en horizontal, NUNCA EN VERTICAL.
+Caja de bloque 
+    - Ocupan todo el ancho disponible. lo que genera saltos de lineas.
+    - Tienen dimensiones modificables (alto, ancho)
+    - No permiten otros elementos a su lado (aunque especifique un ancho, siguen ocupando todo el espacio disponible a lo ancho) */
+
+.caja-linea,
+.caja-bloque {
+    background-color: darkcyan;
+    color: white;
+    width: 500px;
+    height: 250px;
+    border: medium solid purple;
+    padding: 16px;
+}
+
+.caja-bloque {
+    margin: 32px;
+    display: block;
+}
+
+.caja-linea {
+    margin: 32px;
+    display: inline;
+}
+
+/* Propiedad Display
+inline
+block 
+inline-block - Se comporta como un elemento de línea pero acepta modificar sus dimensiones (alto y ancho)
+none -> oculta elementos, pero carga en background
+table -> redundante, solo se quedaria para uso de tablas 
+list-item
+flex-box & flex-grid .. se tratan aparte */
+
+.caja-none,
+.caja-linea-bloque,
+.caja-hidden {
+    background-color: palevioletred;
+    color: white;
+    width: 600px;
+    height: 300px;
+    border: medium solid black;
+}
+
+.caja-linea-bloque {
+    display: inline-block; /*inline-block -> se comporta como una caja en linea, pero admite las dimensiones de ancho y alto, dejando el espacio establecido*/
+}
+
+.caja-none {
+    display: none; /*Desparece pero no significa que se borra el contenido, se usaria para formularios(elementos interactivos)*/
+}
+
+.caja-hidden {
+    visibility: hidden; /*Conserva el espacio que se oculta a diferencia de display none*/
+}
+
+.overflow {
+    background-color: aqua;
+    width: 200px;
+    height: 100px;
+    overflow: visible; /*visible todo el valor, desbordando el contenido*/
+    overflow: hidden; /*oculta la parte que se desborda*/
+    overflow: scroll; /*genera un scroll*/
+    overflow: auto;
+}
+
+.box-sizing-content,
+.box-sizing-border {
+    background-color: deepskyblue;
+    box-sizing: content-box;    /*Va sumar el espacio de width , padding , etc*/
+    width: 500px;
+    height: 250px;
+    padding: 10px;
+    border: thick solid black;
+}
+
+.box-sizing-border {
+    box-sizing: border-box; /*Conserva el tamaño de la caja, y las suma las realiza hacia dentro*/
+}
+
+.conteiner-col-3 {
+    background: burlywood;
+    width: 600px;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.conteiner-col-3 > * {
+    box-sizing: border-box;
+    width: 200px;
+    border: thin solid red;
+    padding: 10px;
+    float: left;
+}
+
+/* Floats */
+.container-floats {
+    background-color: lightseagreen;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;   
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* Colapso de margenes verticales */
+.margin-collapse {
+    background-color: limegreen;
+}
+
+.margin-collapse section {
+    border: thin solid black;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+/* Los margenes horizontales no se colapsan, a comparación de los verticales que si */
+.margin-collapse span {
+    display: inline-block;
+    border: thin solid black;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+.sitio-web {
+    border: thin solid black;
+    background-color: thistle;
+    width: 800px;
+    height: 1000px;
+    padding: 16px;
+    margin-left: auto;  /*ajusta proporcionalmente el width a cada lado*/
+    margin-right: auto; /*ajusta proporcionalmente el width a cada lado*/
+}
