@@ -17,6 +17,7 @@ html {
     margin-right: auto;
     width: 200px;
     height: 200px;
+    margin-bottom: 2rem;
 }
 
 .box-shadow {
@@ -54,4 +55,176 @@ html {
     height: auto;
     /* filter: drop-shadow(mov-x mov-y blur-radius color) */
     filter: drop-shadow(1rem 1rem 1rem #ff00aa);
+}
+
+/* Degradados */
+
+.linear-gradient {
+    background-image: linear-gradient(#ff0000, #00ff00, #0000ff);
+    background-image: linear-gradient(0deg, #ff0000, #00ff00, #0000ff);
+    background-image: linear-gradient(20deg, #ff0000, #00ff00, #0000ff);
+    background-image: linear-gradient(90deg, #ff0000, #00ff00, #0000ff);
+    background-image: linear-gradient(180deg, #ff0000, #00ff00, #0000ff);
+    background-image: linear-gradient(to left, #ff0000, #00ff00, #0000ff);
+    background-image: linear-gradient(to left bottom, #ff0000, #00ff00, #0000ff);
+    background-image: linear-gradient(90deg, #ff0000 30%, #00ff00 60%, #0000ff);
+    background-image: linear-gradient(90deg, #ff0000 30%, #00ff00 60%, #0000ff);
+    background-image: linear-gradient(90deg, #ff0000 33%, #ffffff 34% 67%, #ff0000 68%);
+}
+
+.radial-gradient {
+    background-image: radial-gradient(#5500ff, #00ff01, #f10012);
+    background-image: radial-gradient(#671245 40%, #049311, #f10012);
+    background-image: radial-gradient(circle 4rem,#671245 4%, #049311 20%, #f10012 80%, #ffff12 12%);
+    background-image: radial-gradient(circle 100px,#671245 4%, #049311 20%, #f10012 80%, #ffff12);
+    background-image: radial-gradient(circle 100px at top,#671245 4%, #049311 20%, #f10012 80%, #ffff12);
+    background-image: radial-gradient(circle 100px at bottom,#671245 4%, #049311 20%, #f10012 80%, #ffff12);
+    background-image: radial-gradient(circle 100px at bottom left,#671245 33%, #049311 34% 65%, #f10012 66%, #ffff12);
+    background-image: radial-gradient(ellipse 100px 50px,#671245 33%, #049311 34% 65%, #f10012 66%, #ffff12);
+}
+
+.conic-gradient {
+    background-image: conic-gradient(#ff0000, #00ff00, #0000ff);
+    background-image: conic-gradient(#ff0000 0% 50%, #00ff00 51% 60%, #0000ff);
+    background-image: conic-gradient(from 90deg, #ff0000 0deg 120deg, #00ff00 121deg 240deg, #0000ff 241deg);
+}
+
+.repeat-gradient-lineal {
+    background-image: repeating-linear-gradient(red 0 10px, green 10px 20px, blue 20px 30px);
+    background-image: repeating-linear-gradient(45deg, red 0 10px, green 10px 20px, blue 20px 30px);
+    background-image: repeating-linear-gradient(90deg, red 0 10px, green 10px 20px, blue 20px 30px);
+}
+
+.repeat-gradient-radial {
+    background-image: repeating-radial-gradient(circle 4rem, #11ff00 0 10px, #ff010f 10px 20px, #0000a1 20px);
+}
+
+.repeat-gradient-conic {
+    background-image: repeating-conic-gradient(red 0 8%, blue 8% 16%, green 16% 20%);
+}
+
+.chart-gradient {
+    background-image: conic-gradient(cyan 0 50%, magenta 50% 80%, yellow 80%);
+    border-radius: 50%;
+}
+
+.donut-gradient {
+    background-image: radial-gradient(white 40%, black 41%, transparent 42%),
+    conic-gradient(cyan 0 50%, magenta 50% 80%, yellow 80%);
+    border-radius: 50%;
+}
+
+/* Filtros */
+
+.card {
+    border: medium solid rgb(255, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 400px;
+    margin-bottom: 2rem;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+
+}
+
+.filter {
+
+    filter: blur(.25rem);
+    filter: blur(.15rem);
+  
+    filter: brightness(1);
+    filter: brightness(.75);
+    filter: brightness(.15);
+    filter: brightness(.85);
+    filter: brightness(1);
+
+    filter: contrast(0.10);
+    filter: contrast(0.75);
+    filter: contrast(1);
+
+    filter: grayscale(0);
+    filter: grayscale(0.50);
+    filter: grayscale(1);
+
+    filter: sepia(0);
+    filter: sepia(0.75);
+    filter: sepia(1);
+
+    filter: hue-rotate(0deg);
+    filter: hue-rotate(30deg);
+    filter: hue-rotate(60deg);
+    filter: hue-rotate(120deg);
+    filter: hue-rotate(330deg);
+
+    filter: invert(0);
+    filter: invert(1);
+
+    filter: opacity(0);
+    filter: opacity(0.25);
+    filter: opacity(0.50);
+    filter: opacity(1);
+
+    filter: saturate(1);
+    filter: saturate(0);
+    
+    filter: invert(1);
+}
+
+.filters-multiple {
+    filter: blur(0.15rem) hue-rotate(270deg) opacity(.75) invert(1);
+}
+
+.relative {
+    position: relative;
+}
+/* Cuando definimos posicionamiento absoluto, buscará arriba un posicionamiento relativo, sino irá buscando el elemento padre superior que tenga el posicionamiento relativo, y si no encuentra ninguno se posiciona respecto al body de la página */
+.backdrop-filter,
+.backdrop-filter-multiple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.backdrop-filter h4 {
+    border-radius: .5rem;
+    padding: 2rem;
+    font-size: 2rem;
+    background-color:#0000a150;
+    backdrop-filter: grayscale(1);
+    backdrop-filter: sepia(1);
+    backdrop-filter: opacity(.5);
+    backdrop-filter: hue-rotate(270deg);
+    backdrop-filter: blur(0.5rem);
+}
+
+.backdrop-filter-multiple h4 {
+    border-radius: .5rem;
+    padding: 2rem;
+    font-size: 2rem;
+    background-color:#0000a150;
+    backdrop-filter: blur(1rem) hue-rotate(240deg) opacity(.55) invert(0.25);
+}
+
+.dark-mode {
+    background-color: #fff;
+    color: #000;
+    filter: invert(1);
+}
+
+.dark-mode img {
+    filter: invert(1);
 }
