@@ -29,9 +29,9 @@ img {
     top: 0;
     padding: .85rem;
     text-align: center;
-    background-color: #000000;
+    background-color: #010626;
     color: #ffffff;
-    opacity: .90;
+    /* opacity: .90; */
 }
 
 .header a {
