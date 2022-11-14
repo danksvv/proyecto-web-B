@@ -184,6 +184,12 @@ html {
     position: relative;
 }
 /* Cuando definimos posicionamiento absoluto, buscará arriba un posicionamiento relativo, sino irá buscando el elemento padre superior que tenga el posicionamiento relativo, y si no encuentra ninguno se posiciona respecto al body de la página */
+.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .backdrop-filter,
 .backdrop-filter-multiple {
     position: absolute;
@@ -227,4 +233,107 @@ html {
 
 .dark-mode img {
     filter: invert(1);
+}
+
+/* Fusion de imagenes superpuestas */
+.blend-modes img {
+    mix-blend-mode: normal;
+    mix-blend-mode: color;
+    mix-blend-mode: color-dodge;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
+    mix-blend-mode: saturation;
+    mix-blend-mode: luminosity;
+    mix-blend-mode: hue;
+    mix-blend-mode: exclusion;
+    mix-blend-mode: difference;
+    mix-blend-mode: hard-light;
+    mix-blend-mode: soft-light;
+    mix-blend-mode: lighten;
+    mix-blend-mode: darken;
+    mix-blend-mode: overlay;
+}
+
+.bg-blend-mode {
+    background-image: url(../img/imagen-1.jpg), url(../img/imagen-4.jpg);
+    background-size: cover;
+    background-blend-mode: normal;
+    background-blend-mode: color;
+    background-blend-mode: screen;
+    background-blend-mode: difference;
+    background-blend-mode: lighten;
+    background-blend-mode: darken;
+    background-blend-mode: multiply;
+    background-blend-mode: overlay;
+}
+
+.clip-path {
+    clip-path: circle();
+    clip-path: circle(4rem);
+    clip-path: circle(10rem);
+    clip-path: circle(15rem at top);
+    clip-path: circle(15rem at right);
+    clip-path: circle(15rem at right top);
+    clip-path: circle(15rem at left bottom);
+    clip-path: circle(15rem at 60% 40%);
+    
+    clip-path: ellipse();
+    clip-path: ellipse(15rem 20rem);
+    clip-path: ellipse(15rem 20rem at top);
+    clip-path: ellipse(15rem 20rem at left);
+    clip-path: ellipse(15rem 20rem at left top);
+    clip-path: ellipse(15rem 20rem at right bottom);
+    clip-path: ellipse(15rem 20rem at 300px 50px);
+    clip-path: ellipse(15rem 20rem at 20% 50%);
+
+    clip-path: inset(2rem);
+    clip-path: inset(4rem);
+    clip-path: inset(4rem 2rem);
+    clip-path: inset(4rem 2rem 3rem);
+    clip-path: inset(4rem 2rem 3rem 5rem);
+    clip-path: inset(4rem round 1rem 2rem 3rem 5rem);
+
+    clip-path: polygon(0 0, 100% 0, 50% 100%);  
+}
+
+.shapes {
+    border: thick solid black;
+    padding: 1rem;
+    margin: 0 auto 5rem;
+    max-width: 800px;
+}
+
+.shapes img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.shape-1 {
+    margin: 4rem 2rem;
+    shape-outside: circle();
+    shape-outside: ellipse();
+    shape-outside: circle();
+    shape-outside: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+
+.shape-2 {
+    margin: 4rem 0 4rem 2rem;
+    shape-outside: circle();
+}
+
+.shape-3 {
+    margin: 2rem 8rem 0 0;
+    shape-outside: polygon(0% 25%, 34% 0%, 67% 1%, 78% 14%, 77% 44%, 58% 59%, 98% 99%, 0% 99%);
 }
